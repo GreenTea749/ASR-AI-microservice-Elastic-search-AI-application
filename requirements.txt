@@ -1,1 +1,15 @@
-
+transformers>=4.31.0
+torch>=1.13.1
+librosa>=0.10.0        # for loading & resampling
+soundfile>=0.12.1     # alternative loader
+pydub>=0.25.1        # for audio format conversion
+librosa>=0.10.0        # for loading & resampling
+datasets>=2.12.0        # for loading datasets
+fastapi>=0.95.2        # for serving the model
+uvicorn>=0.22.0        # for serving the model
+pydantic>=1.10.7        # for data validation
+python-multipart>=0.0.6        # for file uploads
+requests>=2.31.0        # for making HTTP requests
+pandas>=1.5.3        # for data manipulation
+pathlib>=1.8.2        # for file path manipulations
+tqdm>=4.64.1        # for progress bars

@@ -1,0 +1,15 @@
+# search-ui/docker-compose.yml
+services:
+  ui:
+    build:
+      context: .
+      args:
+        REACT_APP_ES_HOST: http://localhost:9200
+    ports:
+      - "3000:3000"         
+    networks:
+      - esnet
+
+networks:
+  esnet:
+    external: true

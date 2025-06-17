@@ -117,6 +117,8 @@ Key components:
 - `esnet`: User-defined Docker bridge network
 - Index name: `cv-transcriptions`
 
+
+website link: http://13.212.113.101:3000/
 ---
 
 ## Quick Start (Local)
@@ -185,7 +187,7 @@ docker compose run --rm indexer
 
 This app is deployable on any public VM (e.g., AWS EC2, Azure B1s) using Docker and a public IP. No managed services are used.
 
-**Live Demo**: [http://your-public-ip:3000](http://your-public-ip:3000)
+**Live Demo**: http://13.212.113.101:3000/
 
 ---
 

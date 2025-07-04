@@ -1,3 +1,10 @@
+This repository contains 2 project tasks that showcases deployment of practical AI tools and infrasctructure.
+
+The first project task is a fully containerized Automatic Speech Recognition (ASR) microservice using FastAPI and Facebook’s Wav2Vec2 model from Hugging Face, capable of transcribing thousands of audio files with low latency. This project task showcases how to integrate a deep learning model intoa web service, process audio input, and deploy the service using Docker.
+
+The second project task is the deployment of a full-stack search engine that indexes the transcriptions made from the previous task, and enables intelligent querying through a user-friendly frontend built with React and Elasticsearch. The search engine are deployed via Docker and hosted on an AWS EC2 instance, demonstrating scalable, end-to-end deployment of real-world ML pipelines.
+
+
 # Task 1 – Automatic Speech Recognition (ASR) Microservice  
 **Created by Cleon**
 For task 1, I have created and hosted microservice that delivers a FastAPI-based ASR model for transcribing audio files with low latency and high throughput. It’s fully containerized for seamless local or cloud deployment.
@@ -13,7 +20,7 @@ For task 1, I have created and hosted microservice that delivers a FastAPI-based
 ---
 
 ## Quick Start (Local)
-
+The bash code provided in this section caters is meant for local environment. The dependencies can be found in the requirements.txt file. This bash code is used by myself to mass transcribe audio files into the excel file cv-valid-dev/cv-valid-dev.csv.
 ### Backend Setup
 ```bash
 uvicorn asr.asr_api:app --host 0.0.0.0 --port 8001 --reload
@@ -34,6 +41,7 @@ Content           : {"pong"}
 This means that the service is working and ready to transcribe your audio files.
 
 ### To transcribe a audio file using this service, type in the command below, replacing it with the path of the desired audio file
+example: using 'cv-valid-dev/sample-000000.mp3' file
 ```bash
 curl -F "file=@cv-valid-dev/sample-000000.mp3"      http://localhost:8001/asr
 ```
@@ -44,7 +52,7 @@ curl -F "file=@cv-valid-dev/sample-000000.mp3"      http://localhost:8001/asr
 
 ---
 
-## Bulk Transcription
+### Bulk Transcription
 To test the capabilities of this service, 4076 common-voice files (under the 'common_voice/cv-valid-dev' folder) has be transcribed using the asr end point. The transcribed text has been saved back into a new column: 'generated_text' in the cv-valid-dev.csv
 
 The following command is used to run the test
@@ -55,9 +63,9 @@ python asr/cv-decode.py
 - Reads each `.mp3` in `cv-valid-dev/`  
 - Calls `/asr` endpoint  
 - Writes `generated_text` column in `cv-valid-dev.csv`
-
 ---
 
+The bash code in this section can be used to containerise the microservice and perform the same functions as the local deployment in the previous section.
 ## Containerization
 
 ### Build Docker Image

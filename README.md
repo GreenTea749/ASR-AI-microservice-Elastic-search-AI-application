@@ -196,7 +196,7 @@ docker compose run --rm indexer
 This app is deployable on any public VM (e.g., AWS EC2, Azure B1s) using Docker and a public IP. No managed services are used.
 
 **Live Demo**: http://13.212.113.101:3000/
-
+(not available at this moment)
 ---
 
 ## Searchable Fields
